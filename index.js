@@ -11,7 +11,7 @@ app.use(corsConfig)
 app.use(jsonParser)
 app.get("/", (req, res) => {
     res.send({
-        message: "Project Service_Hub Server",
+        message: "Project NEXTGEN Server",
         health: "ok",
     });
 });
