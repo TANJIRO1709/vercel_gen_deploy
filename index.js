@@ -5,6 +5,7 @@ import corsConfig from "./middlewares/cors.js";
 import serviceHubAi from "./routes/serviceHubAi.js"
 
 const app = express();
+app.use(express.json());
 config();
 const port = process.env.PORT || 5000;
 app.use(corsConfig)
