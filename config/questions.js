@@ -1373,3 +1373,11 @@ export const questionAnswers = [
     }
 
 ]
+
+const sentence = data.question;
+try {
+  const keywords = extractKeywords(sentence);
+  console.log("Extracted Keywords:", keywords);
+} catch (err) {
+  console.error("Error:", err.message);
+}
