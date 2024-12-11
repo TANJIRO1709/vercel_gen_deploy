@@ -67,9 +67,15 @@ const stopWords = new Set([
     "Savings habit formation"
 ]);
 
-export default function extractKeywords(sentence) {
-    const doc = nlp(sentence);
-    const terms = doc.terms().out("array");
-    const keywords = terms.filter((word) => !stopWords.has(word.toLowerCase()));
-    return keywords;
+function extractKeywords(sentence) {
+  if (typeof sentence !== "string") {
+    throw new TypeError("Input must be a string");
+  }
+
+  // Assuming `nlp` is from a library like `compromise`
+  const doc = nlp(sentence);
+  const terms = doc.terms().out("array");
+  const keywords = terms.filter((word) => !stopWords.has(word.toLowerCase()));
+  
+  return keywords;
 }
