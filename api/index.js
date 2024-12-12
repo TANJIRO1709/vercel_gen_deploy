@@ -1,8 +1,8 @@
 import express from "express";
 import { config } from "dotenv";
-import jsonParser from "./middlewares/jsonParser.js";
-import corsConfig from "./middlewares/cors.js";
-import serviceHubAi from "./routes/serviceHubAi.js"
+import jsonParser from "../middlewares/jsonParser.js";
+import corsConfig from "../middlewares/cors.js";
+import serviceHubAi from "../routes/serviceHubAi.js"
 
 const app = express();
 app.use(express.json());
@@ -21,4 +21,3 @@ app.use("/api/ServiceHubAI", serviceHubAi);
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
-
